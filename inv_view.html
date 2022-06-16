@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=devide-width, initial-scale=1."> <!--  to make it mobile friendly -->
+  <title>Inventory Homepage</title>
+  <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript">
+    // To use Html5QrcodeScanner (more info below)
+import {Html5QrcodeScanner} from "html5-qrcode"
+
+// To use Html5Qrcode (more info below)
+import {Html5Qrcode} from "html5-qrcode"
+  </script>
+  <!-- ICONS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- STYLESHEET -->
+  <link rel="stylesheet" href="./inv_dash.css">
+</head>
+<body>
+  <div class="container">
+    <!--============ SIDEBAR (LEFT) ============-->
+    <aside>
+      <div class="topbar">
+        <h1>Shopping Cart</h1>
+        <h3> Hello, this is what your cart looks like right now.</h3>
+      </div>
+
+      <div class="sidebar">
+        <div>
+          <h1>Total Items</h1>
+          <input id="ti" type="text" value="TI" readonly>
+        </div>
+        <div>
+          <h1>Total Cost</h1>
+          <input id="tc" type="text" value="TC" readonly>
+        </div>
+        <div id="reader"></div>
+      </div>
+    </aside>
+
+    <!--============ MIDDLE (MAIN) SECTION ============-->
+    <main>
+      <div class="inventory-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Product ID</th>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- will be filled automatically with js function (see inv_dash.js) -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <!--============ RIGHT SECTION ============-->
+    <div class="right">
+      <div class="right-top">
+        <button id="toggle-sidebar">
+          <span class="material-icons">menu</span>
+        </button>
+        <div class="profile">
+          <div class="info">
+            <p>Romel</p>
+          </div>
+          <div class="profile-pic">
+            <img src="./assets/sample_profile.jpg">
+          </div>
+        </div>
+      </div>
+
+      <h2>Notes</h2>
+      <textarea id="notes"
+       placeholder="Click here and begin typing to write down notes.."
+       spellcheck="false">
+     </textarea>
+
+    </div>
+    <!--============ END OF RIGHT SECTION ============-->
+  </div>
+  <script src="./database/db.js"></script>
+  <script src="inv_dash.js"></script> 
+  <script src="items_db.js"></script>
+</body>
+</html>
